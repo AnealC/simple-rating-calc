@@ -1,0 +1,33 @@
+#====================================================================================
+# Function name: determine_stars(main)     Author: Aaron Crawford
+# Date Written: March 7, 2022
+#====================================================================================
+# Purpose of Function: Calculate a star rating based on the main() input
+#
+#====================================================================================
+# Data Dictionary
+#  Name            Type             Range          Use
+#  ------          -----            ----------     ------------------------------------------------------------
+#  main            function input   [1 - 10]       used as input to calculate star rating from
+#                                                  main()
+#====================================================================================
+
+# Determines the star rating based on main function value
+def determine_stars(main):
+    if main >= 9.0:
+        print('Your score of', main, 'gives you *****')
+    elif 8.0 <= main <= 8.9:
+        print('Your score of', main, 'gives you ****')
+    elif 7.0 <= main <= 7.9:
+        print('Your score of', main, 'gives you ***')
+    elif 6.0 <= main <= 6.9:
+        print('Your score of', main, 'gives you **')
+    elif 5.0 <= main <= 5.9:
+        print('Your score of', main, 'gives you *')
+    elif main < 5.0:
+        print('Your score of', main, 'gives you no stars')
+
+# Program will run main function as an input, and stars function as an output
+
+
+determine_stars(main())
