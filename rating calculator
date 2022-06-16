@@ -1,0 +1,62 @@
+#------------------------------------------------------------------------------------------------
+#  Copyright (c) 2022 by Aaron Neal Crawford
+#------------------------------------------------------------------------------------------------
+#  Purpose of Program:
+#  This program calculates a running average of ratings from 5 food critics, then displays the
+#  average and a star rating based on that average.
+#=================================================================================================
+# Data Dictionary
+#  Name                     Type          Range         Use
+#  ------                   -----         ----------    -----------------------------------------
+#  fin_rating               float         [0 - inf]     Final running total of ratings
+#  num_ratings              int           [0 - 5]       Number of ratings for loop
+#  rating                   input/ float  [1 - 10]      User input of rating from 1-10
+#  avg_rating               equation      [fin_rating/5]Calculates average of running total ratings
+#=================================================================================================
+#  Functions used:
+#  Name                  Inputs           Use
+#  ------                ------------     --------------------------------------------------------
+#  main()                rating           Calculates a running total and average of 5 ratings from
+#                                         critics
+#  determine_stars(main) N/A              Creates a visual star representation based on the results
+#                                         of the main function
+#=================================================================================================
+
+
+#====================================================================================
+# Function name: main()     Author: Aaron Crawford
+# Date Written: March 7, 2022
+#====================================================================================
+# Purpose of Function: Calculates an average based on 5 rating inputs from 1-10
+#
+#====================================================================================
+# Data Dictionary
+#  Name            Type          Range          Use
+#  ------               -----            ----------       ----------------------------
+# fin_rating               float         [0 - inf]      Final running total of ratings
+# num_ratings              int           [0 - 5]        Number of ratings for loop
+# rating                   input/ float  [1 - 10]       User input of rating from 1-10
+# avg_rating               equation      [fin_rating/5] Calculates average of running
+#                                                       total ratings
+#====================================================================================
+
+# Input function for ratings
+def main():
+    # Variables
+    fin_rating = 0
+    num_ratings = 0
+    # Loop for rating inputs
+    while num_ratings != 5:
+        rating = float(input('Enter in a rating from 1-10: '))
+        while rating > 10:
+            print('ERROR: Rating cannot be higher than 10.')
+            rating = float(input('Enter in a rating from 1-10: '))
+        while rating < 0:
+            print('ERROR: Rating cannot be lower than 1.')
+            rating = float(input('Enter in a rating from 1-10: '))
+        else:
+            fin_rating += rating
+            num_ratings += 1
+    # Calculates Avg from running total in while loop
+    avg_rating = fin_rating / 5
+    return avg_rating
